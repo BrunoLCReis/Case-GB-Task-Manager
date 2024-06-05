@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tarefas Pendentes e Concluídas</h1>
+    <form id="task-form">
+      <input type="text" id="task-title" placeholder="Título da tarefa" required>
+      <input type="text" id="task-desc" placeholder="Descrição da tarefa" required>
+      <button type="submit">Adicionar</button>
+    </form>
+    <div class="task-lists">
+      <div class="task-list-container">
+        <h2>Pendentes</h2>
+        <ul id="pending-task-list"></ul>
+      </div>
+      <div class="task-list-container">
+        <h2>Concluídas</h2>
+        <ul id="completed-task-list"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

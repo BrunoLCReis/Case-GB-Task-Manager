@@ -1,0 +1,16 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+  },
+  "dependencies": {
+    "fastify": "^3.0.0",
+    "fastify-cors": "^5.0.0",
+    "sqlite3": "^5.0.0"
+  }
+}
