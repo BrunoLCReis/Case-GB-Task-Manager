@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const editTask = async (id, currentTitle, currentDescription) => {
     const newDescription = prompt('Nova descrição:', currentDescription);
 
-    if (newDescription !== null) { // Permitir que o usuário possa cancelar a edição
+    if (newDescription !== null) { // Permitir que o usuário possa cancelar a edição da descrição
       const response = await fetch(`${apiUrl}/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
