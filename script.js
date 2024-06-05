@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const completeButton = document.createElement('button');
       completeButton.classList.add('button', 'is-small', task.completed ? 'is-success' : 'is-light');
       completeButton.textContent = task.completed ? 'Desmarcar' : '✔';
-      completeButton.addEventListener('click', () => completeTask(task.id, !task.completed));
+      completeButton.addEventListener('click', () => completeTask(task.title, task.description, task.id, !task.completed));
 
       const editButton = document.createElement('button');
       editButton.classList.add('button', 'is-small', 'is-info');
@@ -80,11 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Função para marcar uma tarefa como concluída
-  const completeTask = async (id, completed) => {
+  const completeTask = async (title, description, id, completed) => {
     const response = await fetch(`${apiUrl}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ completed })
+      body: JSON.stringify({ title, description, completed, id})
     });
 
     if (response.ok) {
@@ -92,22 +92,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Função para editar uma tarefa
-  const editTask = async (id, currentTitle, currentDescription) => {
-    const newDescription = prompt('Nova descrição:', currentDescription);
+// Função para editar uma tarefa
+const editTask = async (id, currentTitle, currentDescription) => {
+  const popup = document.getElementById('popup');
+  const editDescription = document.getElementById('edit-description');
 
-    if (newDescription !== null) { // Permitir que o usuário possa cancelar a edição
-      const response = await fetch(`${apiUrl}/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: currentTitle, description: newDescription, completed: false })
-      });
+  // Exibe o popup
+  popup.style.display = 'block';
+  editDescription.value = currentDescription;
 
-      if (response.ok) {
-        fetchTasks();
-      }
+  // Evento para salvar a edição
+  const saveButton = document.getElementById('save-edit');
+  saveButton.addEventListener('click', async () => {
+    const updatedDescription = editDescription.value;
+    popup.style.display = 'none';
+
+    const response = await fetch(`${apiUrl}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: currentTitle, description: updatedDescription, completed: false })
+    });
+
+    if (response.ok) {
+      fetchTasks();
     }
-  };
+  });
+
+  // Evento para cancelar a edição
+  const cancelButton = document.getElementById('cancel-edit');
+  cancelButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+};
+
 
   // Função para deletar uma tarefa
   const deleteTask = async (id) => {

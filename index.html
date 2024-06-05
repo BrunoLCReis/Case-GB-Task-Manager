@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section class="section">
@@ -42,6 +42,13 @@
           <h2 class="subtitle">Concluídas</h2>
           <ul id="completed-task-list" class="list"></ul>
         </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+              <textarea id="edit-description" class="textarea"></textarea>
+              <button id="save-edit" class="button is-primary">Salvar</button>
+              <button id="cancel-edit" class="button">Cancelar</button>
+            </div>
+          </div>          
       </div>
     </div>
   </section>
