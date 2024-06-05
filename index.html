@@ -4,27 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>TASK MANAGER BOARD</h1>
-    <form id="task-form">
-      <input type="text" id="task-title" placeholder="Título da tarefa" required>
-      <input type="text" id="task-desc" placeholder="Descrição da tarefa" required>
-      <button type="submit">Adicionar</button>
-    </form>
-    <div class="task-lists">
-      <div class="task-list-container">
-        <h2>Pendentes</h2>
-        <ul id="pending-task-list"></ul>
-      </div>
-      <div class="task-list-container">
-        <h2>Concluídas</h2>
-        <ul id="completed-task-list"></ul>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Tarefas Pendentes e Concluídas</h1>
+      <form id="task-form" class="box">
+        <div class="field">
+          <label class="label">Título da tarefa</label>
+          <div class="control">
+            <input class="input" type="text" id="task-title" placeholder="Título da tarefa" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Descrição da tarefa</label>
+          <div class="control">
+            <input class="input" type="text" id="task-desc" placeholder="Descrição da tarefa" required>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary" type="submit">Adicionar</button>
+          </div>
+        </div>
+      </form>
+      <div class="columns">
+        <div class="column is-half">
+          <h2 class="subtitle">Pendentes</h2>
+          <ul id="pending-task-list" class="list"></ul>
+        </div>
+        <div class="column is-narrow">
+          <div class="separator"></div>
+        </div>
+        <div class="column is-half">
+          <h2 class="subtitle">Concluídas</h2>
+          <ul id="completed-task-list" class="list"></ul>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
