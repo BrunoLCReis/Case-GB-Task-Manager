@@ -1,6 +1,6 @@
 const db = require('./db');
 
-async function routes(fastify, options) {
+async function routes(fastify) {
   fastify.get('/api/tasks', async (request, reply) => {
     db.all('SELECT * FROM tasks', (err, rows) => {
       if (err) {
