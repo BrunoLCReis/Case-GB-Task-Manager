@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const completeButton = document.createElement('button');
       completeButton.classList.add('button', 'is-small', task.completed ? 'is-success' : 'is-light');
-      completeButton.textContent = task.completed ? 'Desmarcar' : '✔';
+      completeButton.textContent = task.completed ? 'Pendente' : '✔';
       completeButton.addEventListener('click', () => completeTask(task.title, task.description, task.id, !task.completed));
 
       const editButton = document.createElement('button');
