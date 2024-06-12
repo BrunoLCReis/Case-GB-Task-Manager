@@ -2,15 +2,15 @@ const fastify = require('fastify')({ logger: true });
 const db = require('./db');
 const routes = require('./routes');
 
-// Configurar CORS
+// Configurar CORS - habilitado para a comunicação web
 fastify.register(require('fastify-cors'), {
   origin: true
 });
 
-// Registrar rotas
+// Registrar rotas http
 fastify.register(routes);
 
-// Iniciar servidor
+// Inicia servidor node
 const start = async () => {
   try {
     await fastify.listen(3000);

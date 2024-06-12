@@ -6,7 +6,8 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     description TEXT,
-    completed BOOLEAN DEFAULT 0
+    completed BOOLEAN DEFAULT 0,
+    inProgress BOOLEAN DEFAULT 0
   )`);
 });
 

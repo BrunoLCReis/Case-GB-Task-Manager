@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GB Case</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- Abaixo adicioneu o bulma somente para trazer uma base mais amistosa aos olhos num primeiro momento, em seguida fiz diversos ajustes direto no css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section class="section">
     <div class="container">
       <h1 class="title has-text-centered">Gerenciador De Tarefas</h1>
+      <hr class="separator" style="height: 2px; border-left: 1340px solid #bb0d0d;"></hr>  
       <form id="task-form" class="box">
         <div class="field">
           <label class="label">Título</label>
@@ -31,22 +33,29 @@
         </div>
       </form>
       <div class="columns">
-        <div class="column is-half">
-          <h2 class="subtitle" style="text-align: center;">Pendentes</h2>
+        <div class="column is-half" style="width: 33%;">
+          <h2 class="subtitle-backlog" style="text-align: center;">Backlog</h2>
           <ul id="pending-task-list" class="list"></ul>
         </div>
         <div class="column is-narrow">
           <div class="separator"></div>
         </div>
-        <div class="column is-half">
-          <h2 class="subtitle" style="text-align: center;">Concluídas</h2>
+        <div class="column is-half" style="width: 33%;">
+          <h2 class="subtitle-dev" style="text-align: center;">In Progress</h2>
+          <ul id="in-progress-task-list" class="list"></ul>
+        </div>
+        <div class="column is-narrow">
+          <div class="separator"></div>
+        </div>
+        <div class="column is-half" style="width: 33%;">
+          <h2 class="subtitle-done" style="text-align: center;">Done</h2>
           <ul id="completed-task-list" class="list"></ul>
         </div>
         <div id="popup" class="popup">
             <div class="popup-content">
               <textarea id="edit-description" class="textarea"></textarea>
-              <button id="save-edit" class="button is-primary">Salvar</button>
-              <button id="cancel-edit" class="button">Cancelar</button>
+              <button id="save-edit" class="button is-primary" style="margin-top: 15px;">Salvar</button>
+              <button id="cancel-edit" class="button" style="margin-top: 15px;">Cancelar</button>
             </div>
           </div>          
       </div>
