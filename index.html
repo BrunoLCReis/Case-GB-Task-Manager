@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
+  <title>GB Case</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section class="section">
     <div class="container">
-      <h1 class="title has-text-centered">Tarefas Pendentes e Concluídas</h1>
+      <h1 class="title has-text-centered">Gerenciador De Tarefas</h1>
       <form id="task-form" class="box">
         <div class="field">
-          <label class="label">Título da tarefa</label>
+          <label class="label">Título</label>
           <div class="control">
             <input class="input" type="text" id="task-title" placeholder="Título da tarefa" required>
           </div>
         </div>
         <div class="field">
-          <label class="label">Descrição da tarefa</label>
+          <label class="label">Descrição</label>
           <div class="control">
             <input class="input" type="text" id="task-desc" placeholder="Descrição da tarefa" required>
           </div>
@@ -32,14 +32,14 @@
       </form>
       <div class="columns">
         <div class="column is-half">
-          <h2 class="subtitle">Pendentes</h2>
+          <h2 class="subtitle" style="text-align: center;">Pendentes</h2>
           <ul id="pending-task-list" class="list"></ul>
         </div>
         <div class="column is-narrow">
           <div class="separator"></div>
         </div>
         <div class="column is-half">
-          <h2 class="subtitle">Concluídas</h2>
+          <h2 class="subtitle" style="text-align: center;">Concluídas</h2>
           <ul id="completed-task-list" class="list"></ul>
         </div>
         <div id="popup" class="popup">
